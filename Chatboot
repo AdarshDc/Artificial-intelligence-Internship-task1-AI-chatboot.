@@ -1,0 +1,24 @@
+def simple_chatbot(user_input):
+    user_input = user_input.lower()  # Convert input to lowercase for easier matching
+
+    if "hello" in user_input:
+        response = "Hello! How can I assist you today?"
+    elif "how are you" in user_input:
+        response = "I'm just a chatbot, but I'm here to help!"
+    elif "goodbye" in user_input:
+        response = "Goodbye! Have a great day!"
+    elif "help" in user_input:
+        response = "I can provide information and answer questions. What do you need?"
+    else:
+        response = "I'm sorry, I don't understand that."
+
+    return response
+
+# Main loop
+while True:
+    user_query = input("You: ")
+    if user_query.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    bot_response = simple_chatbot(user_query)
+    print("Chatbot:", bot_response)
